@@ -11,7 +11,8 @@
     "start": "node arvorino.js"
   },
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "sqlite3": "^5.1.2"
   },
   "engines": {
     "node": ">=14"
