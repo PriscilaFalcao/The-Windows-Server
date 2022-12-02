@@ -18,7 +18,7 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 // const app = express();
 // const hostname = '127.0.0.1';
 // const port = 1234;
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 // app.use(express.static("../frontend3/"));
