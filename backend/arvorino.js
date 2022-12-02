@@ -19,10 +19,10 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 // const hostname = '127.0.0.1';
 // const port = 1234;
 // const bodyParser = require('body-parser');
-// const urlencodedParser = bodyParser.urlencoded({ extended: false });
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 // app.use(express.static("../frontend3/"));
-// app.use(express.json());
+app.use(express.json());
 
 // caminho do banco de dados
 const DBPATH = 'arvorino2.db'
