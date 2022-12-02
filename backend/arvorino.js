@@ -1,19 +1,28 @@
 // CÓDIGO DO SERVIDOR
 
 // importa bibliotecas necessárias
-const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const fetch = require('node-fetch');
+const express = require("express");
 
-// cria servidor no endereço local e determina que a pasta frontend deve ser usada como source
+
 const app = express();
-const hostname = '127.0.0.1';
-const port = 1234;
-const bodyParser = require('body-parser');
-const urlencodedParser = bodyParser.urlencoded({ extended: false });
+const port = process.env.PORT || 3001;
 
-app.use(express.static("../frontend3/"));
-app.use(express.json());
+app.get("/", (req, res) => res.type('html').send(express.static("../frontend3/")));
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+
+// // cria servidor no endereço local e determina que a pasta frontend deve ser usada como source
+// const app = express();
+// const hostname = '127.0.0.1';
+// const port = 1234;
+// const bodyParser = require('body-parser');
+// const urlencodedParser = bodyParser.urlencoded({ extended: false });
+
+// app.use(express.static("../frontend3/"));
+// app.use(express.json());
 
 // caminho do banco de dados
 const DBPATH = 'arvorino2.db'
@@ -206,7 +215,6 @@ app.post('/statusjanelainsert', urlencodedParser, (req, res) => {
 	res.end();
 });
 
-app.listen(port, function () {
-    console.log(`Listening on port ${port}`);
-});
-module.exports = app;
+// app.listen(port, hostname, () => {
+// 	console.log(`BD server running at http://${hostname}:${port}/`);
+//   });
