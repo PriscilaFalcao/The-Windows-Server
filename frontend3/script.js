@@ -2,7 +2,7 @@ var i = 3
 
 function showSensors(){
 // PEGAR DADOS SOBRE AS ESTUFAS
-    var url1 = "http://127.0.0.1:1234/estufas";
+    var url1 = "https://arvorino-3ugi.onrender.com/estufas";
     var sensores;
     var xhttp1 = new XMLHttpRequest();
     xhttp1.open("GET", url1, false);
@@ -10,7 +10,7 @@ function showSensors(){
     sensores = JSON.parse(xhttp1.responseText);
 
 //PEGAR DADOS SOBRE A TEMPERATURA E A UMIDADE
-    var url2 = "http://127.0.0.1:1234/registros";
+    var url2 = "https://arvorino-3ugi.onrender.com/registros";
     var registros;
     var xhttp2 = new XMLHttpRequest();
     xhttp2.open("GET", url2, false);
@@ -40,7 +40,7 @@ function showSensors(){
 }
 
 function addSensor(){
-    var url1 = "http://127.0.0.1:3080/resposta/users";
+    var url1 = "https://arvorino-3ugi.onrender.com/resposta/users";
     var resposta1;
     var xhttp1 = new XMLHttpRequest();
     xhttp1.open("GET", url1, false);
