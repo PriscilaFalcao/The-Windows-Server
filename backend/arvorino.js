@@ -5,7 +5,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
-var html = express.static("../frontend3/")
+var html = express.static("../frontend3/index.html")
 
 app.get("/", (req, res) => res.type('html').send(html));
 
