@@ -8,6 +8,8 @@ const port = process.env.PORT || 3001;
 var html = express.static("../frontend3/index.html")
 
 app.get("/", (req, res) => {res.sendFile('index.html', { root: "../frontend3/" })});
+app.get("/", (req, res) => {res.sendFile('style.css', { root: "../frontend3/" })});
+app.get("/", (req, res) => {res.sendFile('script.js', { root: "../frontend3/" })});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
