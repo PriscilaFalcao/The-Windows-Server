@@ -1,17 +1,29 @@
 // CÓDIGO DO SERVIDOR
 
 // importa bibliotecas necessárias
-const sqlite3 = require('sqlite3').verbose();
-const fetch = require('node-fetch');
+
 const express = require("express");
-
-
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.get("/", (req, res) => res.type('html').send(express.static("../frontend3/")));
+app.get("/", (req, res) => res.type('html').send("../frontend3/"));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+
+
+
+// const sqlite3 = require('sqlite3').verbose();
+// const fetch = require('node-fetch');
+// const express = require("express");
+
+
+// const app = express();
+// const port = process.env.PORT || 3001;
+
+// app.get("/", (req, res) => res.type('html').send(express.static("../frontend3/")));
+
+// app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 
 // // cria servidor no endereço local e determina que a pasta frontend deve ser usada como source
