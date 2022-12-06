@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 var html = express.static("../frontend3/index.html")
 
-app.get("/", (req, res) => res.sendFile(path.join("../frontend3/", '/index.html')));
+app.get("/", (req, res) => res.sendFile(path.join("../frontend3/", 'index.html')));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
