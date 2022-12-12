@@ -179,6 +179,11 @@ footer{
     display: flex;
     flex-direction: row;
   }
+  .screen2 .allSensors .sensor{
+    margin-top: 3em;
+    display: flex;
+    flex-direction: row;
+  }
 
   .screen2 .allSensors .s{
     display: flex;
@@ -207,6 +212,18 @@ footer{
 
   .screen2 .allSensors .s .status{
     background-color: #0f69535d;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-style: none;
+    padding: 5px 0px;
+    width: 90px;
+    margin: 10px;
+    font-family: font2;
+    color: var(--snow);
+  }
+
+  .screen2 .allSensors .s .statusH{
+    background-color: rgba(167, 10, 10, 0.25);
     border-radius: 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-style: none;
@@ -261,3 +278,116 @@ footer{
   .footer3{
     max-width: 85px;
   }
+
+  /* ================= INFO PAGE ===================== */
+  .screen1Info{
+    display: flex;
+  }
+
+.editInfo{
+  width: 40%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+}
+.collapsible {
+  background-color: #64a5bd5e;
+  color: var(--oliveDark);
+  cursor: pointer;
+  padding: 18px;
+  width: 95%;
+  border: none;
+  border-radius: 20px;
+  margin: 2em 20px 0px 0px;
+  text-align: center;
+  outline: none;
+  font-size: 20px;
+  font-family: font1;
+  float: right;
+  z-index: 1;
+}
+
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+.activeSelect{
+  border-radius: 20px 20px 0px 0px;
+}
+
+.content {
+  padding: 0 0px;
+  display: none;
+  flex-direction: column;
+  width: 95%;
+  align-items: center;
+  border: none;
+  margin: 0px 20px 0px 1px;
+  float: right;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.sensorStt{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 60%;
+  position: relative;
+  flex-flow: row wrap;
+}
+
+.screen1Info .title{
+  font-size: 80px;
+  position: absolute;
+  margin: 0.2em 1em;
+}
+/* chart config */
+
+.circular-chart {
+  max-width: 80%;
+  margin: 8em 1em 2em 0.5em;
+  max-height: 180px;
+}
+
+.circle {
+  stroke: var(--oliveDark);
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+.percentage {
+  fill: #666;
+  font-family: font2;
+  font-size: 0.5em;
+  text-anchor: middle;
+}
+
+.stt{
+  fill: #666;
+  font-family: font2;
+  font-size: 0.4em;
+  text-anchor: middle;
+}
+
+.infoCharts{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.inf{
+  font-family: font1;
+  color: #0f6952;
+  font-size: 30px;
+  display: flex;
+  justify-content: space-around;
+}
