@@ -5,7 +5,7 @@ var i = 0
 
 function showSensors(){
 // PEGAR DADOS SOBRE AS ESTUFAS
-    var url1 = "http://127.0.0.1:1234/estufas";
+    var url1 = "http://127.0.0.1:3001/estufas";
     var sensores;
     var xhttp1 = new XMLHttpRequest();
     xhttp1.open("GET", url1, false);
@@ -13,7 +13,7 @@ function showSensors(){
     sensores = JSON.parse(xhttp1.responseText);
 
 //PEGAR DADOS SOBRE A TEMPERATURA E A UMIDADE
-    var url2 = "http://127.0.0.1:1234/registros";
+    var url2 = "http://127.0.0.1:3001/registros";
     var registros;
     var xhttp2 = new XMLHttpRequest();
     xhttp2.open("GET", url2, false);
@@ -105,7 +105,7 @@ function collapse(){
 }
 
 function showRecord(){
-  var url2 = "http://127.0.0.1:1234/registros";
+  var url2 = "http://127.0.0.1:3001/registros";
   var registros;
   var xhttp2 = new XMLHttpRequest();
   xhttp2.open("GET", url2, false);
