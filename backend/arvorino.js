@@ -194,7 +194,7 @@ async function test() {
 	let data = await response.json()
 	for (let i = 0; i < data.feeds.length; i++) {
 		const element = data.feeds[i];
-		let sql = "INSERT INTO RegistrosEdt (Umidade, Temperatura, Registro, Estufa) VALUES ('" + element.field2 + "', '" + element.field1 + "', '" + element.created_at + " ', Estufa 1)";
+		let sql = "INSERT INTO RegistrosEdt (Umidade, Temperatura, Registro, Estufa) VALUES ('" + element.field2 + "', '" + element.field1 + "', '" + element.created_at + " ', Estufa 1')";
 		var db = new sqlite3.Database(DBPATH);
 		db.run(sql, [], err => {
 			if (err) {
