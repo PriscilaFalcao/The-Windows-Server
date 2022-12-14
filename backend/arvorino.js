@@ -192,9 +192,10 @@ test();
 async function test() {
 	let response = await fetch("https://api.thingspeak.com/channels/1963863/feeds.json?minutes=1&results=1&timezone=America/Sao_Paulo") 
 	let data = await response.json()
+	let estufa = "Estufa 1"
 	for (let i = 0; i < data.feeds.length; i++) {
 		const element = data.feeds[i];
-		let sql = "INSERT INTO RegistrosEdt (Umidade, Temperatura, Registro, Estufa) VALUES ('" + element.field2 + "', '" + element.field1 + "', '" + element.created_at + " ', Estufa 1')";
+		let sql = "INSERT INTO RegistrosEdt (Umidade, Temperatura, Registro, Estufa) VALUES ('" + element.field2 + "', '" + element.field1 + "', '" + element.created_at + "', '" + estufa +" ' )";
 		var db = new sqlite3.Database(DBPATH);
 		db.run(sql, [], err => {
 			if (err) {
