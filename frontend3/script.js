@@ -1,7 +1,7 @@
 // =========================== HOME SCREEN ===============================
 
 // Global
-var i = 0
+var i = 0;
 
 function showSensors(){
 // PEGAR DADOS SOBRE AS ESTUFAS
@@ -60,27 +60,31 @@ function showSensors(){
 
 
 function addSensor(){
-    // var url1 = "http://127.0.0.1:1234//estufainsert";
-    // var resposta1;
-    // var xhttp1 = new XMLHttpRequest();
-    // xhttp1.open("GET", url1, false);
-    // xhttp1.send();
-    // resposta1 = JSON.parse(xhttp1.responseText);
+  $.ajax({
+    url: "http://127.0.0.1:3001/estufainsert",
+    type: 'POST',
+    async: false,
+    data: {
+      nome_estufa: $("#stoveName").html(),
+      coordenador: $("#manager").html(),
+      idEixo: $("#axleShowID").html(),
+      }
+  });
 
-    // console.log("aqui");
-    // var divSensor = document.createElement("div");
-    // divSensor.setAttribute("class", "s sensor" + i);
-    // divSensor.setAttribute("id", "sensor"+i);
-    // document.getElementById("allSensors").appendChild(divSensor);
-
-
-    // var sensor = document.createElement("img");
-    // sensor.setAttribute("src", "resources/imagens/monitoramento 4.png");
-    // sensor.setAttribute("alt", "sensor");
-    // document.getElementById("sensor"+i).appendChild(sensor);
+    console.log("aqui");
+    var divSensor = document.createElement("div");
+    divSensor.setAttribute("class", "s sensor" + i);
+    divSensor.setAttribute("id", "sensor"+i);
+    document.getElementById("allSensors").appendChild(divSensor);
 
 
-    // i += 1;
+    var sensor = document.createElement("img");
+    sensor.setAttribute("src", "resources/imagens/monitoramento 4.png");
+    sensor.setAttribute("alt", "sensor");
+    document.getElementById("sensor"+i).appendChild(sensor);
+
+
+    i += 1;
 }
 
 
@@ -117,4 +121,39 @@ function showRecord(){
   umidade.textContent = parseInt(registros[registros.length - 1].umidade)/100 + "%";
 }
 
+
+// ========== DOWNLOAD CSV ========================
+//https://medium.com/@danny.pule/export-json-to-csv-file-using-javascript-a0b7bc5b00d2
+// function exportCSVFile(headers, items, fileTitle) {
+//   if (headers) {
+//       items.unshift(headers);
+//   }
+
+//   // Convert Object to JSON
+//   var jsonObject = JSON.stringify(items);
+
+//   var csv = this.convertToCSV(jsonObject);
+
+//   var exportedFilenmae = fileTitle + '.csv' || 'export.csv';
+
+//   var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+//   if (navigator.msSaveBlob) { // IE 10+
+//       navigator.msSaveBlob(blob, exportedFilenmae);
+//   } else {
+//       var link = document.createElement("a");
+//       if (link.download !== undefined) { // feature detection
+//           // Browsers that support HTML5 download attribute
+//           var url = URL.createObjectURL(blob);
+//           link.setAttribute("href", url);
+//           link.setAttribute("download", exportedFilenmae);
+//           link.style.visibility = 'hidden';
+//           document.body.appendChild(link);
+//           link.click();
+//           document.body.removeChild(link);
+//       }
+//   }
+// }
+
+
 colorStt();
+
